@@ -1,7 +1,8 @@
-import React, { Component } from "react"
-import Nav from "./Nav"
-import movieData from "./sampleData/sample-movie-data.js"
-import "./css/App.css"
+import React, { Component } from "react";
+import Nav from "./Nav";
+import PosterContainer from "./Poster-Container";
+import movieData from "./sampleData/sample-movie-data.js";
+import "./css/App.css";
 
 
 class App extends Component {

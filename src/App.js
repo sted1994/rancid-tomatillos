@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import Nav from "./Nav"
+import movieData from "./sampleData/sample-movie-data.js"
 import "./css/App.css"
 
 
@@ -11,11 +12,15 @@ class App extends Component {
     }
   }
 
+  componentDidMount = () => {
+    this.setState({movies: movieData.movies})
+  }
+
   render() {
     return (
       <div>
         < Nav />
-        <p>HELLO </p>
+        < PosterContainer movies={this.state.movies} />
       </div>
     )
   }

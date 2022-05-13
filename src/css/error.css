@@ -1,0 +1,16 @@
+.errors {
+	height: 85vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.sadComputer {
+	height: 100px;
+	width: 100px;
+}
+
+p {
+	font-size: xx-large;
+}

@@ -2,10 +2,10 @@ import React from "react";
 import "./css/nav.css"
 
 
-const Nav = () => {
+const Nav = ({returnHome}) => {
   return (
     <nav className="nav">
-      <h2>Rancid Tomatillos</h2>
+      <button onClick={() => returnHome()}><img src={require("./images/rancid-logo.png")}/></button>
     </nav>
   )
 }

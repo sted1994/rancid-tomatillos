@@ -3,14 +3,15 @@ import Poster from "./Poster";
 import "./css/poster-container.css";
 
 
-const PosterContainer = ({movies}) => {
+const PosterContainer = ({movies, showMovieSummary}) => {
   const posterCards = movies.map(movie => {
     return (
-      <Poster 
+      <Poster
         imagePath={movie.poster_path}
         title={movie.title}
         id={movie.id}
         key={movie.id}
+        showMovieSummary={showMovieSummary}
       />
     )
   })

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Nav from "./Nav";
+import Error from './Error'
 import PosterContainer from "./Poster-Container";
-import movieData from "./sampleData/sample-movie-data.js";
-import "./css/App.css";
+import "./css/app.css";
 import MovieSummary from './Movie-Summary'
 
 class App extends Component {
@@ -12,16 +12,18 @@ class App extends Component {
       movies: [],
       movieSummary: false,
       movieToView: '',
+      errors: '',
     }
   }
 
   showMovieSummary = (event) => {
-    this.setState({
-      movieToView: this.state.movies.find(film => film.id === parseInt(event.target.id)),
-      movieSummary: true
-    })
-
-
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${event.target.id}`)
+    .then(res => res.json())
+    .then(data => this.setState({
+      movieSummary: true,
+      movieToView: data.movie,
+    }))
+    .catch(err => console.log(err))
   }
 
   returnHome = () => {
@@ -29,18 +31,24 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    this.setState({movies: movieData.movies})
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+    .then(res => res.json())
+    .then(data => this.setState({
+      movies: data.movies,
+      errors: ''
+    }))
+    .catch(err => 
+      this.setState({
+      errors: 'Sorry, we are having some problems!'
+    }))
   }
-
-
 
   render() {
     return (
-      <div>
+      <main>
         < Nav returnHome={this.returnHome}/>
-        {(this.state.movieSummary) ? < MovieSummary movieToView={this.state.movieToView}/>: < PosterContainer movies={this.state.movies} showMovieSummary={this.showMovieSummary}/>}
-
-      </div>
+        {(this.state.errors) ? < Error /> : (this.state.movieSummary) ? < MovieSummary movieToView={this.state.movieToView}/> : < PosterContainer movies={this.state.movies} showMovieSummary={this.showMovieSummary}/>}
+      </main>
     )
   }
 }

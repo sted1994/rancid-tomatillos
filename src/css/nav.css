@@ -1,8 +1,15 @@
 .nav {
+	top: 0;
+	position: fixed;
 	display: flex;
-	height: 15vh;
+	height: 10vh;
+	width: 100%;
   text-align: center;
   background-color: blue;
+}
+
+.logo {
+	height: 100%;
 }
 
 

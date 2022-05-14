@@ -4,10 +4,11 @@
 }
 
 .video {
-	height: 85vh;
+	margin-top: 10vh;
+	height: 90vh;
 }
 
 iframe {
-	height: 85vh;
+	height: 100%;
 	width: 100%;
 }

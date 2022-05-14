@@ -4,6 +4,8 @@ import Error from './Error'
 import PosterContainer from "./Poster-Container";
 import "./css/app.css";
 import MovieSummary from './Movie-Summary'
+import FeatureCarousel from './Carousel'
+import HomePage from './HomePage'
 
 class App extends Component {
   constructor(){
@@ -48,7 +50,7 @@ class App extends Component {
       movies: data.movies,
       errors: ''
     }))
-    .catch(err => 
+    .catch(err =>
       this.setState({
       errors: 'Sorry, we are having some problems!'
     }))
@@ -58,7 +60,7 @@ class App extends Component {
     return (
       <main>
         < Nav returnHome={this.returnHome}/>
-        {(this.state.errors) ? < Error /> : (this.state.movieSummary) ? < MovieSummary movie={this.state.movie}/> : < PosterContainer movies={this.state.movies} showMovieSummary={this.showMovieSummary}/>}
+        {(this.state.errors) ? < Error /> : (this.state.movieSummary) ? < MovieSummary movie={this.state.movie}/> : < HomePage moviesProp={this.state.movies} showMovieSummary={this.showMovieSummary}/>}
       </main>
     )
   }

@@ -1,0 +1,18 @@
+.carousel{
+  display:flex;
+  flex-direction: row;
+  height: 60vh;
+  margin-top: 20px;
+  overflow-x: scroll;
+  width: 80vw;
+}
+
+.top-rated {
+  color: white;
+}
+
+.carousel-display {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}

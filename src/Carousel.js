@@ -10,16 +10,14 @@ const FeatureCarousel = ({movies, showMovieSummary}) => {
     return < CarouselCard showMovieSummary={showMovieSummary} movieProp={movie}  id={movie.id} key={movie.id}/>
   })
 
-console.log()
   return (
-<div className="carousel-display">
-<p>Top rated</p>
-    <div className="carousel">
-
-      {featureCards}
+    <div className="carousel-display">
+      <h2 className='top-rated'>Top rated</h2>
+      <div className="carousel">
+        {featureCards}
+      </div>
     </div>
-    </div>
-              )
+  )
 }
 
 export default FeatureCarousel

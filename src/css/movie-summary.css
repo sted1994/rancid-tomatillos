@@ -1,0 +1,14 @@
+.movie-summary {
+	display: grid;
+	height: 100vh;
+}
+
+.video {
+	margin-top: 10vh;
+	height: 90vh;
+}
+
+iframe {
+	height: 100%;
+	width: 100%;
+}

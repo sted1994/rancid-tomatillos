@@ -1,4 +1,13 @@
 .movie-summary {
 	display: grid;
-	height: 85vh
+	height: 100vh;
+}
+
+.video {
+	height: 85vh;
+}
+
+iframe {
+	height: 85vh;
+	width: 100%;
 }

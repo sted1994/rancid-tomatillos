@@ -11,19 +11,30 @@ class App extends Component {
     this.state = {
       movies: [],
       movieSummary: false,
-      movieToView: '',
+      movie: {
+        movieData: '',
+        videos: ''
+      },
       errors: '',
     }
   }
 
   showMovieSummary = (event) => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${event.target.id}`)
-    .then(res => res.json())
-    .then(data => this.setState({
-      movieSummary: true,
-      movieToView: data.movie,
+    Promise.all([
+      fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${event.target.id}`).then(res => res.json()),
+      fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${event.target.id}/videos`).then(res => res.json())
+    ]).then((data) => {
+        return this.setState({
+          movieSummary: true,
+          movie: {
+            movieData: data[0].movie,
+            video: data[1].videos[0]
+          } 
+        })
+    }).catch(err => 
+      this.setState({
+      errors: 'Sorry, we are having some problems!'
     }))
-    .catch(err => console.log(err))
   }
 
   returnHome = () => {
@@ -47,7 +58,7 @@ class App extends Component {
     return (
       <main>
         < Nav returnHome={this.returnHome}/>
-        {(this.state.errors) ? < Error /> : (this.state.movieSummary) ? < MovieSummary movieToView={this.state.movieToView}/> : < PosterContainer movies={this.state.movies} showMovieSummary={this.showMovieSummary}/>}
+        {(this.state.errors) ? < Error /> : (this.state.movieSummary) ? < MovieSummary movie={this.state.movie}/> : < PosterContainer movies={this.state.movies} showMovieSummary={this.showMovieSummary}/>}
       </main>
     )
   }

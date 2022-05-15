@@ -1,5 +1,7 @@
 main {
 	margin: 0;
+  margin-left: -10px;
 	background: black;
 	width: 100vw;
+  font-family: 'Teko', sans-serif;
 }

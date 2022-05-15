@@ -1,18 +1,11 @@
 import React from 'react';
 import './css/movie-summary.css'
+import Trailer from './Trailer'
 
 const MovieSummary = ({movie}) => {
   return (
-		<React.Fragment>
-			<div className='video'>
-				<iframe
-					src={`https://www.${movie.video.site}.com/embed/${movie.video.key}`}
-					frameBorder='0'
-					allow='autoplay'
-					allowFullScreen
-					title={movie.movieData.title}
-				/>
-			</div>
+		<div className='movie'>
+			<Trailer trailers={movie.videos} />
 			<div id={movie.movieData.id}	className="movie-summary" style={{
 				backgroundImage: `url(${movie.movieData.backdrop_path})`
 				}} >
@@ -28,7 +21,7 @@ const MovieSummary = ({movie}) => {
 					<li>{movie.movieData.runtime}</li>
 				</ul>
 			</div>
-		</React.Fragment>
+		</div >
   )
 }
 

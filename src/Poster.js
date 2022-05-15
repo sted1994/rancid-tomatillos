@@ -13,7 +13,7 @@ const Poster = ({imagePath, backdropPath, title, rating, id, showMovieSummary}) 
         <div className="poster-back">
           <img id={id} className="backdrop-image" src={backdropPath} alt={`alternative poster for ${title}`}/>
           <h1>{title}</h1>
-          <h3>Average Rating:{rating}</h3>
+          <h3>Average Rating : {rating}</h3>
         </div>
        </div>
       </div>

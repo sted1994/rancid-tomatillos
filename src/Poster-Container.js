@@ -11,7 +11,7 @@ const PosterContainer = ({movies, showMovieSummary}) => {
         imagePath={movie.poster_path}
         backdropPath={movie.backdrop_path}
         title={movie.title}
-        rating={movie.average_rating}
+        rating={Math.round(movie.average_rating)}
         id={movie.id}
         key={movie.id}
         showMovieSummary={showMovieSummary}

@@ -5,11 +5,13 @@
 	height: 10vh;
 	width: 100%;
   text-align: center;
-  background-color: blue;
+  background-color: #414141;
 }
 
 .logo {
 	height: 100%;
 }
 
-
+.logo:hover {
+	cursor: pointer;
+}

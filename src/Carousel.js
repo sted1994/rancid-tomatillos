@@ -12,7 +12,7 @@ const FeatureCarousel = ({movies, showMovieSummary}) => {
 
   return (
     <div className="carousel-display">
-      <h2 className='top-rated'>Top rated</h2>
+      <h2 className='top-rated'>TOP RATED</h2>
       <div className="carousel">
         {featureCards}
       </div>

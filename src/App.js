@@ -22,6 +22,7 @@ class App extends Component {
   }
 
   showMovieSummary = (event) => {
+    console.log(event.target)
     Promise.all([
       fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${event.target.id}`).then(res => res.json()),
       fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${event.target.id}/videos`).then(res => res.json())

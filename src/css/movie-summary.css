@@ -1,14 +1,25 @@
 .movie {
+	margin-top: 10vh;
 	display: grid;
-	
+	grid-gap: 1.5rem;
+	grid-template-columns: .10fr 1fr .10fr;
 }
 
+.grid-col-span-1 {
+	grid-column: 2;
+}
 
-.movie-summary {
+.trailers {
+	grid-column: span 2;
+	grid-row-start: 2;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	height: 100vh;
+}
+
+.movie-summary {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr)
 }
 

@@ -1,5 +1,5 @@
-import React from 'react'
-import './css/carousel-card.css'
+import React from 'react';
+import './css/carousel-card.css';
 
 const CarouselCard = ({movieProp, showMovieSummary, id}) => {
 

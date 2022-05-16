@@ -22,6 +22,7 @@ class App extends Component {
   }
 
   showMovieSummary = (event) => {
+    console.log(event.target)
     Promise.all([
       fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${event.target.id}`).then(res => res.json()),
       fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${event.target.id}/videos`).then(res => res.json())
@@ -30,7 +31,7 @@ class App extends Component {
           movieSummary: true,
           movie: {
             movieData: data[0].movie,
-            video: data[1].videos[0]
+            videos: data[1].videos
           } 
         })
     }).catch(err => 

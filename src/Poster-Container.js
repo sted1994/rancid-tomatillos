@@ -6,7 +6,6 @@ import FeatureCarousel from './Carousel'
 const PosterContainer = ({movies, showMovieSummary}) => {
   const posterCards = movies.map(movie => {
     return (
-
       <Poster
         imagePath={movie.poster_path}
         backdropPath={movie.backdrop_path}
@@ -16,7 +15,6 @@ const PosterContainer = ({movies, showMovieSummary}) => {
         key={movie.id}
         showMovieSummary={showMovieSummary}
       />
-
     )
   })
 

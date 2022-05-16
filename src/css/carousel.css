@@ -1,21 +1,21 @@
-.carousel{
-  display:flex;
-  flex-direction: row;
-  height: 60vh;
-  margin-top: 20px;
-  margin-bottom: 7%;
-  overflow-x: scroll;
-  width: 80vw;
-}
 
 .top-rated {
   color: white;
-  font-size: 100pt;
-
+  font-size: 80pt;
+  margin-bottom: 0;
 }
 
-.carousel-display {
+ .carousel-root {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  height: 60vh;
+}
+
+.carousel{
   text-align: center;
+  background-color: rgba(173, 172, 167, .5)
+}
+
+.slide{
+  height: 60vh;
 }

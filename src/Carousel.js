@@ -2,6 +2,8 @@ import React from 'react'
 import './css/carousel.css'
 import './css/carousel-card.css'
 import CarouselCard from './Carousel-Card'
+import styles from 'react-responsive-carousel/lib/styles/carousel.min.css'
+import {Carousel} from 'react-responsive-carousel';
 
 const FeatureCarousel = ({movies, showMovieSummary}) => {
   const featureMovies = movies.filter(movie => movie.average_rating >= 6.5);
@@ -11,11 +13,11 @@ const FeatureCarousel = ({movies, showMovieSummary}) => {
   })
 
   return (
-    <div className="carousel-display">
-      <h2 className='top-rated'>TOP RATED</h2>
-      <div className="carousel">
-        {featureCards}
-      </div>
+    <div className="carousel">
+    <h2 className="top-rated">Top Rated</h2>
+    <Carousel className="carousel-display" infiniteLoop={true} autoFocus={true} showStatus={false} showThumbs={false} swipable={true} width={'80%'} showArrows={true} autoPlay={true}>
+    {featureCards}
+    </Carousel>
     </div>
   )
 }

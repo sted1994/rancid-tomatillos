@@ -1,11 +1,13 @@
 import React from "react";
 import "./css/poster.css";
+import { NavLink } from 'react-router-dom';
 
 
 const Poster = ({imagePath, backdropPath, title, rating, id, showMovieSummary}) => {
     return (
-      <div id={id} onClick={(event) => showMovieSummary(event)} className="poster">
-       <div className="poster-inner">
+      <NavLink to={`/${id}`} onClick={(event) => showMovieSummary(event)}>
+       <div id={id} onClick={(event) => showMovieSummary(event)} className="poster">
+        <div className="poster-inner">
         <div className="poster-front">
           <img  id={id} className="poster-image" src={imagePath} alt={`movie poster for ${title}`}/>
           <h3 id={id}>{title}</h3>
@@ -17,6 +19,7 @@ const Poster = ({imagePath, backdropPath, title, rating, id, showMovieSummary}) 
         </div>
        </div>
       </div>
+      </NavLink>
     )
 }
 

@@ -6,8 +6,6 @@
   margin-bottom: 0;
 }
 
-
-
 .carousel-root {
   margin-bottom: 40px;
   display: flex;
@@ -18,6 +16,7 @@
 .control-arrow{
   width: 200px;
 }
+
 .control-arrow,
 .control-next{
   background: black;

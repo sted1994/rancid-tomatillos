@@ -2,6 +2,7 @@ import React from 'react';
 import './css/movie-summary.css';
 import Trailer from './Trailer';
 import NumberFormat from 'react-number-format';
+import { Link } from 'react-router-dom';
 
 
 const MovieSummary = ({movie}) => {

@@ -25,7 +25,7 @@
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
 .poster:hover .poster-inner {
-  transform: rotateY(180deg);
+  transform: rotateX(180deg);
 }
 
 .poster-front, .poster-back {
@@ -42,11 +42,10 @@
   display:flex;
   flex-direction: column;
   justify-content: center;
-  height: 50vh;
   align-items: center;
   font-size: 30pt;
   background: linear-gradient(90deg, rgba(237,241,249,1) 10%, rgba(190,192,199,1) 50%, rgba(237,241,249,1) 90%);;
   color: black;
-  transform: rotateY(180deg);
+  transform: rotateX(180deg);
   cursor:pointer;
 }

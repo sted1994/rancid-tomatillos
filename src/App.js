@@ -32,9 +32,9 @@ class App extends Component {
           movie: {
             movieData: data[0].movie,
             videos: data[1].videos
-          } 
+          }
         })
-    }).catch(err => 
+    }).catch(err =>
       this.setState({
       errors: 'Sorry, we are having some problems!'
     }))

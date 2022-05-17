@@ -7,7 +7,9 @@
 }
 
 .poster-image, .backdrop-image {
-  width: 100%;
+  margin-top: 1rem;
+  border-radius: 10px;
+  width: 70%;
   cursor: pointer;
 }
 
@@ -26,21 +28,25 @@
   transform: rotateY(180deg);
 }
 
-/* Position the front and back side */
 .poster-front, .poster-back {
+  background: linear-gradient(90deg, rgba(237,241,249,1) 10%, rgba(190,192,199,1) 50%, rgba(237,241,249,1) 90%);
+  border-radius: 10px;
   position: absolute;
   width: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
+  height: 100%;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
 .poster-back {
   display:flex;
   flex-direction: column;
-  height:100%;
-  font-size: 60pt;
-  background-color: #414141;
-  color: white;
+  justify-content: center;
+  height: 50vh;
+  align-items: center;
+  font-size: 30pt;
+  background: linear-gradient(90deg, rgba(237,241,249,1) 10%, rgba(190,192,199,1) 50%, rgba(237,241,249,1) 90%);;
+  color: black;
   transform: rotateY(180deg);
   cursor:pointer;
 }

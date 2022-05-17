@@ -20,7 +20,7 @@ const MovieSummary = ({movie}) => {
 					<p>{movie.movieData.average_rating}</p>
 					<p>{movie.movieData.tagline}</p>
 				</div>
-				<ul> Statistics: 
+				<ul> Statistics:
 					<li>{movie.movieData.budget}</li>
 					<li>{movie.movieData.revenue}</li>
 					<li>Run Time: {movie.movieData.runtime}</li>

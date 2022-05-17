@@ -15,7 +15,7 @@ const FeatureCarousel = ({movies, showMovieSummary}) => {
   return (
     <div className="carousel">
     <h2 className="top-rated">Top Rated</h2>
-    <Carousel className="carousel-display" infiniteLoop={true} autoFocus={true} showStatus={false} showThumbs={false} swipable={true} width={'80%'} showArrows={true} autoPlay={true}>
+    <Carousel className="carousel-display"  autoPlay={true} infiniteLoop showStatus={false} showThumbs={false} width={'80%'} showArrows={true}>
     {featureCards}
     </Carousel>
     </div>

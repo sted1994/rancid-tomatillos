@@ -6,6 +6,7 @@ import "./css/app.css";
 import MovieSummary from './Movie-Summary'
 import FeatureCarousel from './Carousel'
 import HomePage from './HomePage'
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 
 class App extends Component {
   constructor(){
@@ -32,9 +33,9 @@ class App extends Component {
           movie: {
             movieData: data[0].movie,
             videos: data[1].videos
-          } 
+          }
         })
-    }).catch(err => 
+    }).catch(err =>
       this.setState({
       errors: 'Sorry, we are having some problems!'
     }))
@@ -61,8 +62,14 @@ class App extends Component {
     return (
       <main>
         < Nav returnHome={this.returnHome}/>
-        {(this.state.errors) ? < Error /> : (this.state.movieSummary) ? < MovieSummary movie={this.state.movie}/> : < HomePage moviesProp={this.state.movies} showMovieSummary={this.showMovieSummary}/>}
+        <Switch>
+        {(this.state.errors) ? < Route path="/error" component={ Error}/>
+        : (this.state.movieSummary) ? < Route path="/${this.state.movie.movieData.id}"
+        render={() => < MovieSummary movie={this.state.movie}/>} />
+        : < Route exact path="/" render={()=> < HomePage moviesProp={this.state.movies} showMovieSummary={this.showMovieSummary}/>} />}
+      </Switch>
       </main>
+
     )
   }
 }

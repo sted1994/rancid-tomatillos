@@ -5,7 +5,7 @@ import { Carousel } from 'react-responsive-carousel';
 
 const Trailer = ({trailers}) => {
 	return (
-		<Carousel ariaLabel='hello' infiniteLoop autoFocus={true} autoPlay={true} width={800} className='trailers-carousel' showThumbs={false}>
+		<Carousel ariaLabel='hello' infiniteLoop autoFocus={true} autoPlay={true} className='trailers-carousel' showThumbs={false}>
 			{trailers.map(trailer => (
 				<div key={trailer.id}>
 					<iframe

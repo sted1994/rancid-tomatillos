@@ -5,10 +5,6 @@
 	grid-template-columns: .10fr 1fr .10fr;
 }
 
-.about { 
-	color: white;
-}
-
 .movie-summary {
 	background: black;
 	opacity: 80%;
@@ -36,4 +32,27 @@
 	align-self: end;
 }
 
+.about { 
+	display: grid;
+	grid-template-columns: 1fr;
+	color: white;
+}
+
+.release-date {
+	place-self: center;
+}
+
+.movie-title {
+	font-size: 40pt;
+	place-self: center;
+}
+
+.overview {
+	place-self: center;
+	text-align: center;
+}
+
+.tagline {
+	place-self: center;
+}
 

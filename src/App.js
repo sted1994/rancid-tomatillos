@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import Nav from "./Nav";
-import Error from './Error'
+import Error from "./Error"
 import "./css/app.css";
-import MovieSummary from './Movie-Summary'
-import HomePage from './HomePage'
+import MovieSummary from "./Movie-Summary"
+import HomePage from "./HomePage"
 import { Switch, Route, Redirect } from "react-router-dom";
+import {apiCalls} from "./Api-calls"
 
 class App extends Component {
   constructor(){
@@ -20,8 +21,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-    .then(res => res.json())
+    apiCalls.getMovies()
     .then(data => this.setState({
       movies: data.movies,
       errors: ''
@@ -41,7 +41,7 @@ class App extends Component {
         <Switch>
           < Route path="/error" component={ Error } />
           < Route exact path='/:id' render={({match}) => {
-            return < MovieSummary id={match.params.id} /> } 
+            return < MovieSummary id={match.params.id} /> }
           } />
           < Route exact path="/" render={()=> < HomePage moviesProp={this.state.movies} />} />
         </Switch>

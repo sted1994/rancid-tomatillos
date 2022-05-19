@@ -1,57 +1,65 @@
-import React from 'react';
+import React, { Component } from 'react'
 import './css/movie-summary.css';
 import Trailer from './Trailer';
 import NumberFormat from 'react-number-format';
 
-const MovieSummary = ({movie}) => {
-  return (
-		<div className='movie' style={{
-			backgroundImage: `url(${movie.movieData.backdrop_path})`
-			}}>
-			<div id={movie.movieData.id}	className="movie-summary grid-col-span-1"  >
-				<div className='trailers'>
-					<Trailer trailers={movie.videos} />
-				</div>
-				<div className='about'>
-					<h1 className='movie-title'>{movie.movieData.title}</h1>
-					<p className='overview'>{movie.movieData.overview}</p>
-					<p className='release-date'>{movie.movieData.release_date}</p>
-					<p>{movie.movieData.average_rating}</p>
-					<p>{movie.movieData.tagline}</p>
-				</div>
-				<ul className='statistics'>
-					<li> Budget: {'  '}
-						<NumberFormat
-							value={movie.movieData.budget}
-							className='budget'
-							displayType={'text'}
-							thousandSeparator={true}
-							prefix={'$'}						
-						/>
-					</li>
-					<li> Revenue: {'  '}
-						<NumberFormat
-							value={movie.movieData.revenue}
-							className='revenue'
-							displayType={'text'}
-							thousandSeparator={true}
-							prefix={'$'}						
-						/>						
-					</li>
-					<li> Run Time: {'  '}
-						<NumberFormat
-							value={movie.movieData.runtime}
-							className='runtime'
-							displayType={'text'}
-							thousandSeparator={true}	
-							suffix={' min'}				
-						/>
-					</li>
-				</ul>
-			</div>
-		</div >
-  )
-}
+class MovieSummary extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+		movieData: '',
+		videos: '',
+		errors: ''
+		}
+	}
 
+	componentDidMount = () => {
+		Promise.all([
+			fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}`).then(res => res.json()),
+			fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}/videos`).then(res => res.json())
+		]).then((data) => {
+				return this.setState({
+					movieData: data[0].movie,
+					videos: data[1].videos
+				})
+		})
+		.catch(err =>
+			this.setState({
+			errors: 'Sorry, we are having some problems!'
+		}))
+	}
+	
+	renderTrailers = () => {
+		return (
+			<div className='trailers'>
+				<Trailer trailers={this.state.videos} />
+			</div>
+		)
+	}
+
+  render () {
+		return (
+			<div className='movie'>
+				<div id={this.state.movieData.id}	className="movie-summary grid-col-span-1" style={{
+					backgroundImage: `url(${this.state.movieData.backdrop_path})`
+					}} >
+					{(this.state.videos) ? this.renderTrailers() : ''}
+					<div className='about'>
+						<h1 className='movie-title'>{this.state.movieData.title}</h1>
+						<p className='overview'>{this.state.movieData.overview}</p>
+						<p className='release-date'>{this.state.movieData.release_date}</p>
+						<p>{this.state.movieData.average_rating}</p>
+						<p>{this.state.movieData.tagline}</p>
+					</div>
+					<ul> Statistics:
+						<li>{this.state.movieData.budget}</li>
+						<li>{this.state.movieData.revenue}</li>
+						<li>Run Time: {this.state.movieData.runtime}</li>
+					</ul>
+				</div>
+			</div >
+		)
+	}
+}
 
 export default MovieSummary;

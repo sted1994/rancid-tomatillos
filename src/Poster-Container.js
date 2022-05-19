@@ -3,7 +3,7 @@ import Poster from "./Poster";
 import "./css/poster-container.css";
 import FeatureCarousel from './Carousel'
 
-const PosterContainer = ({movies, showMovieSummary}) => {
+const PosterContainer = ({movies}) => {
   const posterCards = movies.map(movie => {
     return (
       <Poster
@@ -13,7 +13,6 @@ const PosterContainer = ({movies, showMovieSummary}) => {
         rating={Math.round(movie.average_rating)}
         id={movie.id}
         key={movie.id}
-        showMovieSummary={showMovieSummary}
       />
     )
   })

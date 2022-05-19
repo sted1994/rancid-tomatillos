@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import './css/movie-summary.css';
 import Trailer from './Trailer';
 import NumberFormat from 'react-number-format';
+import { Link } from 'react-router-dom';
+import {apiCalls} from "./Api-calls"
 
 class MovieSummary extends Component {
 	constructor(props) {
@@ -15,9 +17,10 @@ class MovieSummary extends Component {
 
 	componentDidMount = () => {
 		Promise.all([
-			fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}`).then(res => res.json()),
-			fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}/videos`).then(res => res.json())
+			apiCalls.getSingleMovie(this.props.id),
+			apiCalls.getMovieTrailers(this.props.id)
 		]).then((data) => {
+			console.log(data);
 				return this.setState({
 					movieData: data[0].movie,
 					videos: data[1].videos
@@ -28,7 +31,7 @@ class MovieSummary extends Component {
 			errors: 'Sorry, we are having some problems!'
 		}))
 	}
-	
+
 	renderTrailers = () => {
 		return (
 			<div className='trailers'>

@@ -5,21 +5,54 @@
 	grid-template-columns: .10fr 1fr .10fr;
 }
 
+.movie-summary {
+	background: black;
+	opacity: 80%;
+}
+
+.statistics {
+	font-size: 20pt;
+	display: flex;
+	justify-content: space-evenly;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	color: white;
+	align-self: center;
+}
+
 .grid-col-span-1 {
 	grid-column: 2;
 }
 
 .trailers {
+	margin-top: 20px;
 	grid-column: span 2;
 	grid-row-start: 2;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	align-self: end;
 }
 
-.movie-summary {
+.about { 
 	display: grid;
-	grid-template-columns: repeat(2, 1fr)
+	grid-template-columns: 1fr;
+	color: white;
+}
+
+.release-date {
+	place-self: center;
+}
+
+.movie-title {
+	font-size: 40pt;
+	place-self: center;
+}
+
+.overview {
+	place-self: center;
+	text-align: center;
+}
+
+.tagline {
+	place-self: center;
 }
 

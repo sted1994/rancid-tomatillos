@@ -4,7 +4,7 @@ import Error from "./Error"
 import "./css/app.css";
 import MovieSummary from "./Movie-Summary"
 import HomePage from "./HomePage"
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route} from "react-router-dom";
 import {apiCalls} from "./Api-calls"
 
 class App extends Component {
@@ -20,6 +20,8 @@ class App extends Component {
     this.setState({movieSummary: false, movieToView: ''})
   }
 
+  
+
   componentDidMount = () => {
     apiCalls.getMovies()
     .then(data => this.setState({
@@ -27,10 +29,11 @@ class App extends Component {
       errors: ''
       })
     )
-    .catch(err =>
+    .catch(err =>{
       this.setState({
       errors: 'Sorry, we are having some problems!'
       })
+    }
     )
   }
 
@@ -38,12 +41,13 @@ class App extends Component {
     return (
       <main>
         < Nav returnHome={this.returnHome} />
+        {(this.state.errors) ? < Error /> : "" }
         <Switch>
-          < Route path="/error" component={ Error } />
           < Route exact path='/:id' render={({match}) => {
             return < MovieSummary id={match.params.id} /> }
           } />
           < Route exact path="/" render={()=> < HomePage moviesProp={this.state.movies} />} />
+          < Route exact path="/error" component={ Error } />
         </Switch>
       </main>
     )

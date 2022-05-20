@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import './css/movie-summary.css';
 import Trailer from './Trailer';
 import NumberFormat from 'react-number-format';
-import { Link } from 'react-router-dom';
 import {apiCalls} from "./Api-calls"
+import Error from './Error'
 
 class MovieSummary extends Component {
 	constructor(props) {
@@ -11,7 +11,7 @@ class MovieSummary extends Component {
 		this.state = {
 		movieData: '',
 		videos: '',
-		errors: ''
+		errors: false
 		}
 	}
 
@@ -19,17 +19,17 @@ class MovieSummary extends Component {
 		Promise.all([
 			apiCalls.getSingleMovie(this.props.id),
 			apiCalls.getMovieTrailers(this.props.id)
-		]).then((data) => {
-			console.log(data);
+		]).then(data => {
+			console.log(data)
 				return this.setState({
 					movieData: data[0].movie,
 					videos: data[1].videos
 				})
-		})
-		.catch(err =>
-			this.setState({
-			errors: 'Sorry, we are having some problems!'
-		}))
+		}).catch(err => {
+			console.log("err", err)
+			return this.setState({
+			errors: true
+		})})
 	}
 
 	renderTrailers = () => {
@@ -40,7 +40,7 @@ class MovieSummary extends Component {
 		)
 	}
 
-  render () {
+	renderSummary = () => {
 		return (
 			<div className='movie' style={{
 					backgroundImage: `url(${this.state.movieData.backdrop_path})`
@@ -59,7 +59,7 @@ class MovieSummary extends Component {
 								value={this.state.movieData.average_rating}
 								className='budget'
 								displayType={'text'}
-								thousandSeparator={true}					
+								thousandSeparator={true}
 						/>
 						</li>
 						{'|'}
@@ -69,7 +69,7 @@ class MovieSummary extends Component {
 								className='budget'
 								displayType={'text'}
 								thousandSeparator={true}
-								prefix={'$'}						
+								prefix={'$'}
 							/>
 						</li>
 						{'|'}
@@ -79,8 +79,8 @@ class MovieSummary extends Component {
 								className='revenue'
 								displayType={'text'}
 								thousandSeparator={true}
-								prefix={'$'}						
-							/>						
+								prefix={'$'}
+							/>
 						</li>
 						{'|'}
 						<li> Run Time {'  '}
@@ -88,13 +88,23 @@ class MovieSummary extends Component {
 								value={this.state.movieData.runtime}
 								className='runtime'
 								displayType={'text'}
-								thousandSeparator={true}	
-								suffix={' min'}				
+								thousandSeparator={true}
+								suffix={' min'}
 							/>
 						</li>
 					</ul>
 				</div>
 			</div >
+		)
+	}
+
+
+  render () {
+		return (
+			<>
+			{(this.state.errors) ? < Error /> : this.renderSummary() }
+
+			</>
 		)
 	}
 }

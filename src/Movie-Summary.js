@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './css/movie-summary.css';
 import Trailer from './Trailer';
 import NumberFormat from 'react-number-format';
+import { Link } from 'react-router-dom';
 import {apiCalls} from "./Api-calls"
 import Error from './Error'
 
@@ -11,7 +12,7 @@ class MovieSummary extends Component {
 		this.state = {
 		movieData: '',
 		videos: '',
-		errors: false
+		errors: ''
 		}
 	}
 
@@ -19,17 +20,16 @@ class MovieSummary extends Component {
 		Promise.all([
 			apiCalls.getSingleMovie(this.props.id),
 			apiCalls.getMovieTrailers(this.props.id)
-		]).then(data => {
-			console.log(data)
+		]).then((data) => {
 				return this.setState({
 					movieData: data[0].movie,
 					videos: data[1].videos
 				})
-		}).catch(err => {
-			console.log("err", err)
-			return this.setState({
-			errors: true
-		})})
+		})
+		.catch(err =>
+			this.setState({
+			errors: 'Sorry, we are having some problems!'
+		}))
 	}
 
 	renderTrailers = () => {
@@ -40,11 +40,14 @@ class MovieSummary extends Component {
 		)
 	}
 
-	renderSummary = () => {
+  render () {
 		return (
+		<>
+		{(this.state.errors) ? < Error /> : "" }
 			<div className='movie' style={{
 					backgroundImage: `url(${this.state.movieData.backdrop_path})`
 					}}>
+
 				<div id={this.state.movieData.id}	className="movie-summary grid-col-span-1"  >
 					{(this.state.videos) ? this.renderTrailers() : ''}
 					<div className='about'>
@@ -95,15 +98,6 @@ class MovieSummary extends Component {
 					</ul>
 				</div>
 			</div >
-		)
-	}
-
-
-  render () {
-		return (
-			<>
-			{(this.state.errors) ? < Error /> : this.renderSummary() }
-
 			</>
 		)
 	}

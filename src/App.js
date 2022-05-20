@@ -20,7 +20,7 @@ class App extends Component {
     this.setState({movieSummary: false, movieToView: ''})
   }
 
-  
+
 
   componentDidMount = () => {
     apiCalls.getMovies()
@@ -47,7 +47,7 @@ class App extends Component {
             return < MovieSummary id={match.params.id} /> }
           } />
           < Route exact path="/" render={()=> < HomePage moviesProp={this.state.movies} />} />
-          < Route exact path="/error" component={ Error } />
+          < Route exact path="*" component={ Error } />
         </Switch>
       </main>
     )

@@ -40,65 +40,70 @@ class MovieSummary extends Component {
 		)
 	}
 
+	renderMovieSummary = () => {
+		return (
+			<div className='movie' style={{
+				backgroundImage: `url(${this.state.movieData.backdrop_path})`
+				}}>
+
+			<div id={this.state.movieData.id}	className="movie-summary grid-col-span-1"  >
+				{(this.state.videos) ? this.renderTrailers() : ''}
+				<div className='about'>
+					<h1 className='movie-title'>{this.state.movieData.title}</h1>
+					<p className='tagline'>{this.state.movieData.tagline}</p>
+					<p className='release-date'>{this.state.movieData.release_date}</p>
+					<p className='overview'>{this.state.movieData.overview}</p>
+				</div>
+				<ul className='statistics'>
+					<li> Average Rating {'  '}
+						<NumberFormat
+							value={this.state.movieData.average_rating}
+							className='budget'
+							displayType={'text'}
+							thousandSeparator={true}
+					/>
+					</li>
+					{'|'}
+					<li> Budget {'  '}
+						<NumberFormat
+							value={this.state.movieData.budget}
+							className='budget'
+							displayType={'text'}
+							thousandSeparator={true}
+							prefix={'$'}
+						/>
+					</li>
+					{'|'}
+					<li> Revenue {'  '}
+						<NumberFormat
+							value={this.state.movieData.revenue}
+							className='revenue'
+							displayType={'text'}
+							thousandSeparator={true}
+							prefix={'$'}
+						/>
+					</li>
+					{'|'}
+					<li> Run Time {'  '}
+						<NumberFormat
+							value={this.state.movieData.runtime}
+							className='runtime'
+							displayType={'text'}
+							thousandSeparator={true}
+							suffix={' min'}
+						/>
+					</li>
+				</ul>
+			</div>
+		</div >
+		)
+	}
+
   render () {
 		return (
 		<>
-		{(this.state.errors) ? < Error /> : "" }
-			<div className='movie' style={{
-					backgroundImage: `url(${this.state.movieData.backdrop_path})`
-					}}>
-
-				<div id={this.state.movieData.id}	className="movie-summary grid-col-span-1"  >
-					{(this.state.videos) ? this.renderTrailers() : ''}
-					<div className='about'>
-						<h1 className='movie-title'>{this.state.movieData.title}</h1>
-						<p className='tagline'>{this.state.movieData.tagline}</p>
-						<p className='release-date'>{this.state.movieData.release_date}</p>
-						<p className='overview'>{this.state.movieData.overview}</p>
-					</div>
-					<ul className='statistics'>
-						<li> Average Rating {'  '}
-							<NumberFormat
-								value={this.state.movieData.average_rating}
-								className='budget'
-								displayType={'text'}
-								thousandSeparator={true}
-						/>
-						</li>
-						{'|'}
-						<li> Budget {'  '}
-							<NumberFormat
-								value={this.state.movieData.budget}
-								className='budget'
-								displayType={'text'}
-								thousandSeparator={true}
-								prefix={'$'}
-							/>
-						</li>
-						{'|'}
-						<li> Revenue {'  '}
-							<NumberFormat
-								value={this.state.movieData.revenue}
-								className='revenue'
-								displayType={'text'}
-								thousandSeparator={true}
-								prefix={'$'}
-							/>
-						</li>
-						{'|'}
-						<li> Run Time {'  '}
-							<NumberFormat
-								value={this.state.movieData.runtime}
-								className='runtime'
-								displayType={'text'}
-								thousandSeparator={true}
-								suffix={' min'}
-							/>
-						</li>
-					</ul>
-				</div>
-			</div >
-			</>
+			{(this.state.errors) ? < Error /> : this.renderMovieSummary() }
+		</>
 		)
 	}
 }

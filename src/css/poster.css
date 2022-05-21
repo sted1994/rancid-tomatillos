@@ -1,6 +1,5 @@
 .poster {
   padding: 50px;
-  width: 96%;
   height: 50vh;
   perspective: 1000px;
   background-color: transparent;
@@ -16,7 +15,7 @@
 /* This container is needed to position the front and back side */
 .poster-inner {
   position: relative;
-  width: 29rem; 
+  width: 29rem;
   height: 100%;
   text-align: center;
   transition: transform 0.8s;

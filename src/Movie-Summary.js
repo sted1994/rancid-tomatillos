@@ -1,10 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import './css/movie-summary.css';
 import Trailer from './Trailer';
 import NumberFormat from 'react-number-format';
-import { Link } from 'react-router-dom';
-import {apiCalls} from "./Api-calls"
-import Error from './Error'
+import {apiCalls} from "./Api-calls";
+import Error from './Error';
 
 class MovieSummary extends Component {
 	constructor(props) {
@@ -13,8 +12,8 @@ class MovieSummary extends Component {
 		movieData: '',
 		videos: '',
 		errors: ''
-		}
-	}
+		};
+	};
 
 	componentDidMount = () => {
 		Promise.all([
@@ -29,8 +28,8 @@ class MovieSummary extends Component {
 		.catch(err =>
 			this.setState({
 			errors: 'Sorry, we are having some problems!'
-		}))
-	}
+		}));
+	};
 
 	renderTrailers = () => {
 		return (
@@ -96,17 +95,17 @@ class MovieSummary extends Component {
 				</ul>
 			</div>
 		</div >
-		)
-	}
+		);
+	};
 
   render () {
 		return (
-		<>
-			{(this.state.errors) ? < Error /> : this.renderMovieSummary() }
-		</>
-		)
-	}
-}
+			<>
+				{(this.state.errors) ? < Error /> : this.renderMovieSummary() }
+			</>
+		);
+	};
+};
 
 
 export default MovieSummary;

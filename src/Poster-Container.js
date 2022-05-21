@@ -1,7 +1,6 @@
 import React from "react";
 import Poster from "./Poster";
 import "./css/poster-container.css";
-import FeatureCarousel from './Carousel'
 
 const PosterContainer = ({movies}) => {
   const posterCards = movies.map(movie => {
@@ -14,15 +13,14 @@ const PosterContainer = ({movies}) => {
         id={movie.id}
         key={movie.id}
       />
-    )
-  })
+    );
+  });
 
-    return (
-      <section className="poster-container">
-        {posterCards}
-      </section>
-  )
-}
-
+  return (
+    <section className="poster-container">
+      {posterCards}
+    </section>
+  );
+};
 
 export default PosterContainer;

@@ -12,10 +12,19 @@
   height: 60vh;
 }
 
-.control-arrow{
-  background-color: black;
-  width: 4rem;
+.carousel .slider-wrapper {
+  width: 80%;
 }
+
+.control-arrow{
+  width: 10%;
+}
+
+.control-arrow,
+.control-next{
+  background: black;
+}
+
 
 .carousel{
   border-radius: 10px;

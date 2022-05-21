@@ -6,8 +6,8 @@
 }
 
 .movie-summary {
-	background: black;
-	opacity: 80%;
+	background: radial-gradient(circle, #272525 1%, #0a0505a6 50%);
+	box-shadow: inset 0px -20px 20px 20px rgb(16 16 16 / 80%);
 }
 
 .statistics {
@@ -39,7 +39,9 @@
 }
 
 .release-date {
-	place-self: center;
+	margin-top: -8px;
+	align-self: start;
+	justify-self: center;
 }
 
 .movie-title {
@@ -47,12 +49,18 @@
 	place-self: center;
 }
 
+.release-date-title {
+	padding-right: 10px;
+}
+
 .overview {
+	width: 80%;
 	place-self: center;
 	text-align: center;
 }
 
 .tagline {
+	margin-top: -6px;
 	place-self: center;
 }
 

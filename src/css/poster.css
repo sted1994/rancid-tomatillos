@@ -16,7 +16,7 @@
 /* This container is needed to position the front and back side */
 .poster-inner {
   position: relative;
-  width: 100%;
+  width: 29rem; 
   height: 100%;
   text-align: center;
   transition: transform 0.8s;

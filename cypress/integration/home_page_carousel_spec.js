@@ -18,7 +18,7 @@ describe("Home Page Carousel", () => {
 
   it('Should be able to click movie in carousel to see summary', () => {
     cy.get('.carousel-display').click()
-    cy.url().should('eq', 'http://localhost:3000/659991')
+    cy.url().should('eq', 'http://localhost:3000/rancid-tomatillos/659991')
   });
 
   it('Should be able to click control dots', () =>{

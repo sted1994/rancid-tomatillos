@@ -6,7 +6,7 @@ const CarouselCard = ({movieProp, id}) => {
   return (
     <Link to={`/${id}`}>
       <div className="slide" id={id} >
-        <img  className="carousel-card-img" src={movieProp.poster_path}/>
+        <img alt={movieProp.title} className="carousel-card-img" src={movieProp.poster_path}/>
         <p className="legend">{movieProp.title}</p>
       </div>
     </Link>

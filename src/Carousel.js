@@ -2,7 +2,7 @@ import React from 'react';
 import './css/carousel.css';
 import './css/carousel-card.css';
 import CarouselCard from './Carousel-Card';
-import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 
 const FeatureCarousel = ({ movies }) => {

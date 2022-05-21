@@ -14,14 +14,14 @@ describe("Home page", () => {
     cy.intercept("GET", 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', { fixture: 'single-movies/money-plane-MS' })
     cy.intercept("GET", 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919/videos', { fixture: 'single-movies/money-plane-videos' })
     cy.get(".poster-container").children().first().click()
-    cy.url().should("eq", 'http://localhost:3000/694919')
+    cy.url().should("eq", 'http://localhost:3000/rancid-tomatillos/694919')
     cy.contains('Money Plane')
 
     cy.visit('http://localhost:3000')
     cy.intercept("GET", 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/585244', { fixture: 'single-movies/i-still-believe-MS' })
     cy.intercept("GET", 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/585244/videos', { fixture: 'single-movies/i-still-believe-videos' })
     cy.get(".poster-container").children().last().click()
-    cy.url().should("eq", 'http://localhost:3000/585244')
+    cy.url().should("eq", 'http://localhost:3000/rancid-tomatillos/585244')
     cy.contains('I Still Believe')
 
   });

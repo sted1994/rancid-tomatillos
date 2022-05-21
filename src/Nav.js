@@ -6,7 +6,7 @@ const Nav = () => {
   return (
     <nav className="nav">
       <Link to='/'>
-        <img className='logo' src={require("./images/rancid-logo.png")}/>
+        <img alt="Blue Rancid Tomatillo Logo with old video camera" className='logo' src={require("./images/rancid-logo.png")}/>
       </Link>
     </nav>
   );

@@ -4,11 +4,13 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from 'react-responsive-carousel';
 
 const Trailer = ({trailers}) => {
+	console.log(trailers)
 	return (
 		<Carousel ariaLabel='hello' infiniteLoop autoFocus={true} autoPlay={true} className='trailers-carousel' showThumbs={false}>
 			{trailers.map(trailer => (
 				<div key={trailer.id}>
 					<iframe
+						title={trailer.type}
 						className='trailer'
 						src={`https://www.${trailer.site}.com/embed/${trailer.key}`}
 						frameBorder='0'

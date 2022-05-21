@@ -1,0 +1,19 @@
+{
+  "movie": {
+    "id": 585244,
+    "title": "I Still Believe",
+    "poster_path": "https://image.tmdb.org/t/p/original//dqA2FCzz4OMmXLitKopzf476RVB.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original//21Q8bzu10YF9i4O5amBkJBombYo.jpg",
+    "release_date": "2020-03-12",
+    "overview": "The true-life story of Christian music star Jeremy Camp and his journey of love and loss that looks to prove there is always hope.",
+    "genres": [
+      "Drama",
+      "Music"
+    ],
+    "budget": 0,
+    "revenue": 0,
+    "runtime": 115,
+    "tagline": "One love can change your life.",
+    "average_rating": 3.8333333333333335
+  }
+}

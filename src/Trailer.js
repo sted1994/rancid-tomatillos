@@ -9,6 +9,7 @@ const Trailer = ({trailers}) => {
 			{trailers.map(trailer => (
 				<div key={trailer.id}>
 					<iframe
+						title={trailer.type}
 						className='trailer'
 						src={`https://www.${trailer.site}.com/embed/${trailer.key}`}
 						frameBorder='0'
@@ -17,7 +18,7 @@ const Trailer = ({trailers}) => {
 				</div>
 			))}
 		</Carousel>
-	)
-}
+	);
+};
 
 export default Trailer;

@@ -4,7 +4,7 @@ import Error from "./Error"
 import "./css/app.css";
 import MovieSummary from "./Movie-Summary"
 import HomePage from "./HomePage"
-import { Switch, Route} from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import {apiCalls} from "./Api-calls"
 
 class App extends Component {
@@ -16,12 +16,6 @@ class App extends Component {
     }
   }
 
-  returnHome = () => {
-    this.setState({movieSummary: false, movieToView: ''})
-  }
-
-
-
   componentDidMount = () => {
     apiCalls.getMovies()
     .then(data => this.setState({
@@ -31,24 +25,27 @@ class App extends Component {
     )
     .catch(err =>{
       this.setState({
-      errors: 'Sorry, we are having some problems!'
+      errors: true
       })
-    }
+    })
+  }
+
+  renderApplication = () => {
+    return (
+      <Switch>
+        < Route exact path='/:id' render={({match}) => {
+          return < MovieSummary id={match.params.id} /> }
+        } />
+        < Route exact path="/" render={()=> < HomePage moviesProp={this.state.movies} />} />
+      </Switch>
     )
   }
 
   render() {
     return (
       <main>
-        < Nav returnHome={this.returnHome} />
-        {(this.state.errors) ? < Error /> : "" }
-        <Switch>
-          < Route exact path='/:id' render={({match}) => {
-            return < MovieSummary id={match.params.id} /> }
-          } />
-          < Route exact path="/" render={()=> < HomePage moviesProp={this.state.movies} />} />
-          {/* < Route exact path="*" component={ Error } /> */}
-        </Switch>
+        < Nav />
+        {(this.state.errors) ? < Error /> : this.renderApplication()}
       </main>
     )
   }

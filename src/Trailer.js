@@ -17,7 +17,7 @@ const Trailer = ({trailers}) => {
 				</div>
 			))}
 		</Carousel>
-	)
-}
+	);
+};
 
 export default Trailer;

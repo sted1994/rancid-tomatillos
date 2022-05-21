@@ -14,7 +14,6 @@ const Trailer = ({trailers}) => {
 						src={`https://www.${trailer.site}.com/embed/${trailer.key}`}
 						frameBorder='0'
 						allow='fullscreen; autoplay'
-						data-cy='trailer-frame'
 					/>
 				</div>
 			))}

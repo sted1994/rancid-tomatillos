@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import Nav from "./Nav";
-import Error from './Error'
+import Error from "./Error"
 import "./css/app.css";
-import MovieSummary from './Movie-Summary'
-import HomePage from './HomePage'
-import { Switch, Route, Redirect } from "react-router-dom";
+import MovieSummary from "./Movie-Summary"
+import HomePage from "./HomePage"
+import { Switch, Route } from "react-router-dom";
+import {apiCalls} from "./Api-calls"
 
 class App extends Component {
   constructor(){
@@ -15,36 +16,36 @@ class App extends Component {
     }
   }
 
-  returnHome = () => {
-    this.setState({movieSummary: false, movieToView: ''})
-  }
-
   componentDidMount = () => {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-    .then(res => res.json())
+    apiCalls.getMovies()
     .then(data => this.setState({
       movies: data.movies,
       errors: ''
       })
     )
-    .catch(err =>
+    .catch(err =>{
       this.setState({
-      errors: 'Sorry, we are having some problems!'
+      errors: true
       })
+    })
+  }
+
+  renderApplication = () => {
+    return (
+      <Switch>
+        < Route exact path='/:id' render={({match}) => {
+          return < MovieSummary id={match.params.id} /> }
+        } />
+        < Route exact path="/" render={()=> < HomePage moviesProp={this.state.movies} />} />
+      </Switch>
     )
   }
 
   render() {
     return (
       <main>
-        < Nav returnHome={this.returnHome} />
-        <Switch>
-          < Route path="/error" component={ Error } />
-          < Route exact path='/:id' render={({match}) => {
-            return < MovieSummary id={match.params.id} /> } 
-          } />
-          < Route exact path="/" render={()=> < HomePage moviesProp={this.state.movies} />} />
-        </Switch>
+        < Nav />
+        {(this.state.errors) ? < Error /> : this.renderApplication()}
       </main>
     )
   }

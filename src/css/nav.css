@@ -4,15 +4,19 @@
 	display: flex;
 	height: 10vh;
 	width: 100vw;
-  text-align: center;
+  align-items: center;
   background-color: #414141;
 	z-index: 1;
+	box-shadow: inset 1px 0px 17px 12px #2c2a2a;
 }
 
 .logo {
-	height: 100%;
+	margin-left: 15px;
+	height: 8vh;
+	border-radius: 15px;
 }
 
 .logo:hover {
 	cursor: pointer;
+	 box-shadow: 6px 5px 11px 5px #000000;
 }

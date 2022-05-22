@@ -3,7 +3,7 @@
 	position: fixed;
 	display: flex;
 	height: 10vh;
-	width: 100%;
+	width: 100vw;
   text-align: center;
   background-color: #414141;
 	z-index: 1;

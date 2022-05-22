@@ -12,6 +12,10 @@
   cursor: pointer;
 }
 
+.poster-title{
+  color: black;
+}
+
 /* This container is needed to position the front and back side */
 .poster-inner {
   position: relative;
@@ -35,6 +39,7 @@
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  box-shadow: inset 0px 0px 20px 17px #4e4646;
 }
 
 .poster-back {

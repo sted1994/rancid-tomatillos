@@ -1,70 +1,168 @@
-# Getting Started with Create React App
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <a href="#using-the-application">Using the Application</a>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#planning-resources">Planning Resources</a></li>
+  </ol>
+</details>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- ABOUT THE PROJECT -->
+# Rancid Tomatillos
 
-## Available Scripts
+### About The Project
 
-In the project directory, you can run:
+![Rancid Tomatillos](https://user-images.githubusercontent.com/91028440/169876971-dcfd978e-b35b-4aa7-af41-c7de29f111fa.png)
 
-### `npm start`
+Rancid Tomatillos is a one stop shop for reviews and trailers for the movies you definitely did not take time to see in theaters. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<p align="right">(<a href="#rancid-tomatillos">back to top</a>)</p>
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Built With
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In this project, we used these tools to help build, maintain, and populate the Web Application.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Languages
+* JS
+* HTML
+* CSS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Frameworks/Libraries
+* [Web-pack](https://webpack.js.org/)
+* [React](https://reactjs.org/)
 
-### `npm run eject`
+#### Testing
+* [Cypress](https://www.cypress.io/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Packages
+* [React Router(v 5.3.0)](https://reactrouter.com/)
+* [react-responsive-carousel](https://www.npmjs.com/package/react-responsive-carousel)
+* [react-number-format](https://www.npmjs.com/package/react-number-format)
+* [DAY.JS](https://www.npmjs.com/package/dayjs)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Deployment
+* [GitHub Pages](https://pages.github.com/)
+* [Heroku(api)](https://www.heroku.com/what)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<p align="right">(<a href="#rancid-tomatillos">back to top</a>)</p>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+<!-- GETTING STARTED -->
+## Getting Started
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Deployment Link
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+https://sted1994.github.io/rancid-tomatillos/
 
-### Code Splitting
+### Set Up Instructions for viewing on your local machine
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Clone this repo to your local machine
+2. `cd ` into `rancid-tomatillos`
+3. Then, run NPM install from your command line: `npm install `
+    - Do not run `npm audit fix --force`
+4. After you have run `npm install` inside of your copy of this repo, run:
+`npm start`
+This will run webpack in the terminal so you can view and use the application in your browser. Your terminal will likely display a large block of text as seen below:
+![Local Host Link](https://user-images.githubusercontent.com/91028440/169880456-cc0a2df6-07f9-445b-a5aa-4391194e26d1.png)
 
-### Analyzing the Bundle Size
+5. Find the line that says `Local: http://localhost:3000/rancid-tomatillos` Copy and paste that URL into your browser into your browser or use `cmd + click`. You should have the application set up and ready to use!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+6. Make sure that you type `Control + C` in your terminal when you are done using the application. This ensure the server will stop running before your close your Terminal.
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Using the Application
 
-### Advanced Configuration
+At the top of the homepage there is a curated list of top-rated movies from our selection or truly B-tier films. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<!-- replace with rancid tomatillos site snapshot -->
+<!-- ![Login Page](https://user-images.githubusercontent.com/91028440/165348855-e78b53e2-46b1-483f-ae48-99f57a484b34.png) -->
 
-### Deployment
+Clicking on a poster takes you to a page with more information about the movie as well as trailers. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+<!-- replace with rancid tomatillos snapshot -->
+<!-- ![Customer Dashboard](https://user-images.githubusercontent.com/91028440/165351479-5d3c705f-9d32-4ae6-9699-1b801335abee.png) -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To return to the homepage simply click on the logo in the top left side of the screen.
+
+<p align="right">(<a href="#rancid-tomatillos">back to top</a>)</p>
+
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+
+
+
+<p align="right">(<a href="#rancid-tomatillos">back to top</a>)</p>
+
+<!-- ROADMAP -->
+## Roadmap
+
+- [x] Wire framing
+- [x] Project Board Planning 
+- [x] Draft Class and Functional Components
+- [x] develop initial site layout
+- [x] refactor to utilize router
+- [x] deploy 
+- [x] stylizing and responsiveness
+
+<p align="right">(<a href="#rancid-tomatillos">back to top</a>)</p>
+
+<!-- CONTACT -->
+## Contact
+
+Project Credits -
+* [Tyler Tedesco](https://github.com/sted1994)
+* [Emma Brooke-Davidson](https://github.com/emmacbd)
+* [Michael Putnam](https://github.com/michaelputnam67)
+
+Project Link: [Rancid Tomatillos](https://github.com/sted1994/rancid-tomatillos)
+
+
+<p align="right">(<a href="#rancid-tomatillos">back to top</a>)</p>
+
+<!>
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+* Project Manager: [Kayla Gordon](https://github.com/kaylagordon)
+* [Turing School of Software & Design](https://turing.edu/)
+* [GitHub Pages](https://pages.github.com)
+* [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/#aa-basics-browser-support)
+
+
+
+<p align="right">(<a href="#rancid-tomatillos">back to top</a>)</p>
+
+
+<!-- PLANNING RESOURCES -->
+## Planning Resources
+<!-- WIREFRAME -->
+
+* [Fig jam Organization Board](https://www.figma.com/file/IgxaBquQFvvEVlH45JQ1Ub/Rancid-Tomatillos-Project)
+
+* [DTR](https://docs.google.com/document/d/1ISy1a_DKH0_TDW_9u3LNkSVjtzqMHsDXj7K1YEybN7A/edit)
+
+* [Project Board](https://github.com/sted1994/rancid-tomatillos/projects/1)
+
+
+<p align="right">(<a href="#rancid-tomatillos">back to top</a>)</p>

@@ -3,6 +3,7 @@
 	display: grid;
 	grid-gap: 1.5rem;
 	grid-template-columns: .10fr 1fr .10fr;
+	background-size: cover;
 }
 
 .movie-summary {
@@ -19,6 +20,8 @@
 	padding: 0;
 	color: white;
 	align-self: center;
+	margin-bottom: 15px;
+	padding-bottom: 25px;
 }
 
 .grid-col-span-1 {
@@ -32,7 +35,7 @@
 	align-self: end;
 }
 
-.about { 
+.about {
 	display: grid;
 	grid-template-columns: 1fr;
 	color: white;
@@ -63,4 +66,3 @@
 	margin-top: -6px;
 	place-self: center;
 }
-

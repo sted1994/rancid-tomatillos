@@ -25,10 +25,9 @@
 
 ### About The Project
 
-![Rancid Tomatillos](https://user-images.githubusercontent.com/91028440/169876971-dcfd978e-b35b-4aa7-af41-c7de29f111fa.png)
+[![Rancid Tomatillos](https://user-images.githubusercontent.com/91028440/169876971-dcfd978e-b35b-4aa7-af41-c7de29f111fa.png)](https://sted1994.github.io/rancid-tomatillos/)
 
-Rancid Tomatillos is a one stop shop for reviews and trailers for the movies you definitely did not take time to see in theaters. 
-
+Rancid Tomatillos is a one stop shop for reviews and trailers for the movies you definitely did not take time to see in theaters.
 
 <p align="right">(<a href="#rancid-tomatillos">back to top</a>)</p>
 
@@ -79,7 +78,7 @@ https://sted1994.github.io/rancid-tomatillos/
 4. After you have run `npm install` inside of your copy of this repo, run:
 `npm start`
 This will run webpack in the terminal so you can view and use the application in your browser. Your terminal will likely display a large block of text as seen below:
-![Local Host Link](https://user-images.githubusercontent.com/91028440/169880456-cc0a2df6-07f9-445b-a5aa-4391194e26d1.png)
+![Local Host Link](https://user-images.githubusercontent.com/91028440/169899064-374e9e5d-10f7-4e61-91eb-f51353482d51.png)
 
 5. Find the line that says `Local: http://localhost:3000/rancid-tomatillos` Copy and paste that URL into your browser into your browser or use `cmd + click`. You should have the application set up and ready to use!
 

@@ -107,6 +107,9 @@ To return to the homepage simply click on the logo in the top left side of the s
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+![rancid-home](https://user-images.githubusercontent.com/26700819/169902428-f949152c-84c6-4a7e-acb9-e33ae80e5102.gif)
+![rancid-summary](https://user-images.githubusercontent.com/26700819/169902663-9d52831b-3fff-433b-ac58-c94cfcc9c758.gif)
+![rancid-return-home](https://user-images.githubusercontent.com/26700819/169902936-968a0c91-611a-43e8-bb05-47a9b079800b.gif)
 
 
 

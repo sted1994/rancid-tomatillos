@@ -1,5 +1,5 @@
 .poster-container {
-  display: grid;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   grid-template-columns: repeat(4, 1fr);

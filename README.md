@@ -141,8 +141,6 @@ Project Link: [Rancid Tomatillos](https://github.com/sted1994/rancid-tomatillos)
 
 <p align="right">(<a href="#rancid-tomatillos">back to top</a>)</p>
 
-<!>
-
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 

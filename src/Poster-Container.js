@@ -17,9 +17,13 @@ const PosterContainer = ({movies}) => {
   });
 
   return (
-    <section className="poster-container">
-      {posterCards}
-    </section>
+    <>
+      <h2 class="browse-movies">All Movies</h2>
+      <hr class="browse-movies_hr"/>
+      <section className="poster-container">
+        {posterCards}
+      </section>
+    </>
   );
 };
 

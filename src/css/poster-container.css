@@ -1,5 +1,22 @@
 .poster-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   width:90%;
+}
+
+.browse-movies{
+    color:white;
+    font-size: 3.5vw;
+    margin-bottom: -30px;
+    text-shadow: -2px -3px 0px #646363ed;
+}
+
+.browse-movies_hr{
+  display: none;
+  border-radius: 10px;
+  box-shadow: inset 5px 7px 8px 0px #b9b0b0;
+  height: 1vh;
+  width: 60vh;
+  background-color: white;
 }

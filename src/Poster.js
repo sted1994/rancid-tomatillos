@@ -9,11 +9,11 @@ const Poster = ({ imagePath, backdropPath, title, rating, id }) => {
       <div className="poster-inner">
         <section className="poster-front">
           <img id={id} className="poster-image" src={imagePath} alt={`movie poster for ${title}`}/>
-          <h2 id={id}>{title}</h2>
+          <h2 class="poster-title" id={id}>{title}</h2>
         </section>
         <section id={id} className="poster-back">
           <img id={id} className="backdrop-image" src={backdropPath} alt={`alternative poster for ${title}`}/>
-          <h2 id={id}>{title}</h2>
+          <h2 class="poster-title" id={id}>{title}</h2>
           <p id={id}>Average Rating : {rating}</p>
         </section>
       </div>

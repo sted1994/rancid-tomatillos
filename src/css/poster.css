@@ -1,25 +1,29 @@
 .poster {
-  padding: 50px;
-  width: 96%;
-  height: 50vh;
+  height: 72vh;
   perspective: 1000px;
   background-color: transparent;
+  margin: 60px;
 }
 
 .poster-image, .backdrop-image {
   margin-top: 1rem;
+  margin-bottom: -.75rem;
   border-radius: 10px;
   width: 70%;
   cursor: pointer;
 }
 
+.poster-title{
+  color: black;
+}
+
 /* This container is needed to position the front and back side */
 .poster-inner {
   position: relative;
-  width: 29rem; 
+  width: 29rem;
   height: 100%;
   text-align: center;
-  transition: transform 0.8s;
+  transition:  1s;
   transform-style: preserve-3d;
 }
 
@@ -36,6 +40,7 @@
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  box-shadow: inset 0px 0px 20px 17px #4e4646;
 }
 
 .poster-back {
@@ -43,7 +48,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 30pt;
+  font-size: 25pt;
   background: linear-gradient(90deg, rgba(237,241,249,1) 10%, rgba(190,192,199,1) 50%, rgba(237,241,249,1) 90%);;
   color: black;
   transform: rotateX(180deg);
